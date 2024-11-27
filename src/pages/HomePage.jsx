@@ -66,7 +66,7 @@ const HomePage = () => {
             <div className="bg-[#FEFEFF] border border-gray-2 shadow-lg h-auto rounded-full md:rounded-3xl m-5 p-4 flex items-center justify-between w-full lg:w-1/2">
                 <h1 className="text-2xl font-bold">User Management</h1>
                 <button
-                      className="p-3 rounded-full bg-blue-700 hover:bg-blue-600 text-white md:rounded-xl"
+                      className="p-3 rounded-full bg-purple-600 hover:bg-purple-500 text-white md:rounded-xl"
                     onClick={() => openModal()}>
                     Add User
                 </button>

@@ -15,23 +15,35 @@ const Card = ({ user, onEdit, onDelete }) => {
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-800 truncate">{user.name || 'Club Name'}</h3>
-        <p className="text-sm text-gray-600 mt-1">{user.username || 'username'}</p>
-        <p className="text-sm text-gray-600 mt-1">{user.email || 'No Email'}</p>
-        <p className="text-sm text-gray-600 mt-1">{user.phone || 'No Phone'}</p>
-        <p className="text-sm text-gray-600 mt-1">{user.address?.street || 'No Address Available'}</p>
-        <p className="text-sm text-gray-600 mt-1">{user.company?.name || 'No Company'}</p>
+       
+        <div className="flex items-center justify-between">
+          <h3 className="text-xl font-semibold text-gray-800">{user.name || 'Club Name'}</h3>
+          <p className="text-sm text-gray-600">@{user.username || 'username'}</p>
+        </div>
 
+     
+        <div className="mt-2 flex justify-between">
+          <p className="text-sm text-gray-600">{user.address?.street || 'No Address Available'}</p>
+          <p className="text-sm text-gray-600">{user.company?.name || 'No Company'}</p>
+        </div>
+
+    
+        <div className="mt-2 flex justify-between">
+          <p className="text-sm text-gray-600">{user.phone || 'No Phone'}</p>
+          <p className="text-sm text-gray-600">{user.email || 'No Email'}</p>
+        </div>
+
+       
         <div className="mt-4 flex justify-start items-center gap-3">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+            className='border-2 flex rounded-full p-2 transition-colors duration-200 hover:text-green-600'
             onClick={() => onEdit(user)}>
-            Edit
+            <span className="material-symbols-outlined">edit</span>
           </button>
           <button
-            className="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition duration-300"
+            className='border-2 flex rounded-full p-2 transition-colors duration-200 hover:text-green-600'
             onClick={() => onDelete(user.id)}>
-            Delete
+            <span className="material-symbols-outlined">delete</span>
           </button>
         </div>
       </div>
