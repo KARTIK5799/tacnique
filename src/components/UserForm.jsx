@@ -77,12 +77,12 @@ const UserForm = ({ initialData = {}, onSubmit }) => {
             <InputField label="Phone" name="phone" value={user.phone} onChange={handleChange} required placeholder="Enter phone number" />
             <InputField label="Website" name="website" value={user.website} onChange={handleChange} required placeholder="Enter website" />
 
-            {/* Address fields */}
+       
             <InputField label="Street" name="address.street" value={user.address.street} onChange={handleChange} required placeholder="Enter street" />
             <InputField label="City" name="address.city" value={user.address.city} onChange={handleChange} required placeholder="Enter city" />
             <InputField label="Zipcode" name="address.zipcode" value={user.address.zipcode} onChange={handleChange} required placeholder="Enter zipcode" />
 
-            {/* Company name */}
+          
             <InputField label="Company" name="company.name" value={user.company.name} onChange={handleChange} required placeholder="Enter company name" />
 
             <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
