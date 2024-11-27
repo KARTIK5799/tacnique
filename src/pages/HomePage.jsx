@@ -32,10 +32,10 @@ const HomePage = () => {
 
     return (
         <div className="px-5 flex w-screen flex-col items-center h-auto justify-center">
-            <div className="flex w-screen m-10 px-10 justify-between items-center mb-4">
+            <div className="bg-[#FEFEFF] border border-gray-2 shadow-lg h-auto rounded-full md:rounded-3xl m-5 p-4 flex items-center justify-between w-full lg:w-1/2">
                 <h1 className="text-2xl font-bold">User Management</h1>
                 <button
-                    className="px-4 py-2 bg-green-500 text-white rounded"
+                      className="p-3 rounded-full bg-blue-700 hover:bg-blue-600 text-white md:rounded-xl"
                     onClick={() => openModal()}>
                     Add User
                 </button>
