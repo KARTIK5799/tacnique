@@ -8,30 +8,21 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         fetchUsers().then(setUsers);
+
     }, []);
 
     const addUserHandler = (user) => {
-   
-        const currentUsers = [...users];
-        
-   
         addUser(user).then((newUser) => {
-           
             setUsers((prev) => [...prev, { ...newUser, id: Date.now() }]);
-            console.log('User added:', newUser);
-
-         
-        }).catch(error => {
-            console.error('Error adding user:', error);
-        
-            setUsers(currentUsers);
         });
     };
 
     const updateUserHandler = (updatedUser) => {
+        
         const existingUser = users.find((user) => user.id === updatedUser.id);
 
         if (existingUser) {
+            
             updateUser(updatedUser).then(() => {
                 setUsers((prev) =>
                     prev.map((user) => (user.id === updatedUser.id ? { ...user, ...updatedUser } : user))
@@ -40,6 +31,7 @@ export const UserProvider = ({ children }) => {
                 console.error("Error updating user:", error);
             });
         } else {
+        
             setUsers((prev) =>
                 prev.map((user) => (user.id === updatedUser.id ? { ...user, ...updatedUser } : user))
             );
